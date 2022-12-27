@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit, send, join_room, leave_room
+from xo import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -22,8 +23,10 @@ def on_send_message(message):
     print(f'Received message: {message}')
 
     # Send message back to the client that initiated the event
-    print(request.sid)
+    xo[request.sid].message = message
     emit('new message', message+"!")
+    print(":::",request.sid)
+    print(xo)
     # send('new message', message+"!", room=request.sid)
 
 if __name__ == '__main__':
