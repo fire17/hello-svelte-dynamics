@@ -34,7 +34,7 @@ def on_send_message(message):
     # redis.sessions[request.sid].message = message
     print(":::",request.__dir__)
     # emit('server_update', {"data":message+"!","message":message+"@@"}, room = request.sid)
-    emit('server_update', {"data":{"_value":message+"@","extra":{"_value":"inner_data","meta":{}}},"message":str(message)+"@@"}, room = request.sid)
+    emit('server_update', {"data":{"_value":message+"@","extra":{"_value":"inner_data","meta":{}}},"message":str(message)+"!"}, room = request.sid)
     print(":::",request.sid)
     # print(xo)
     # redis.lastSession = request.sid

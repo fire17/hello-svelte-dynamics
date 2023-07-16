@@ -99,25 +99,25 @@ function exp(_name = "", value=null, parent = null){
 
 // let xo = exp("namespace", "Awesome!")
 let xo = exp("svelte", "Awesome!")
-console.log('.......')
-// let x = new Proxy({}, expando);
-console.log(xo); // produces message: "Value of attribute 'lskdjoau'"
+// console.log('.......')
+// // let x = new Proxy({}, expando);
+// console.log(xo); // produces message: "Value of attribute 'lskdjoau'"
 
-// console.log(x.lskdjoau); // produces message: "Value of attribute 'lskdjoau'"
-xo.a.b.c.d.e.f.g.h = 3
-xo.a.b.c.d.e = () => {return "EEEEEEEEEEEEEEEEEEE"}
-xo.a.b.c = () => {return "CCCCCCCCCCCCC"}
+// // console.log(x.lskdjoau); // produces message: "Value of attribute 'lskdjoau'"
+// xo.a.b.c.d.e.f.g.h = 3
+// xo.a.b.c.d.e = () => {return "EEEEEEEEEEEEEEEEEEE"}
+// xo.a.b.c = () => {return "CCCCCCCCCCCCC"}
+
+
+// console.log(xo); // produces message: "Value of attribute 'lskdjoau'"
+// console.log(xo._name); // produces message: "Value of attribute 'lskdjoau'"
+// console.log(xo.a.b.c._value()); // produces message: "Value of attribute 'lskdjoau'"
+// console.log(xo.a.b.c.d.e._value()); // produces message: "Value of attribute 'lskdjoau'"
+// console.log(xo.a.b.c.d.e.f.g.h._value); // produces message: "Value of attribute 'lskdjoau'"
+// console.log(xo.a.b.c.d.e.f.g.h); // produces message: "Value of attribute 'lskdjoau'"
+
+
 xo.message = "dynamic message"
-
-
-console.log(xo); // produces message: "Value of attribute 'lskdjoau'"
-console.log(xo._name); // produces message: "Value of attribute 'lskdjoau'"
-console.log(xo.a.b.c._value()); // produces message: "Value of attribute 'lskdjoau'"
-console.log(xo.a.b.c.d.e._value()); // produces message: "Value of attribute 'lskdjoau'"
-console.log(xo.a.b.c.d.e.f.g.h._value); // produces message: "Value of attribute 'lskdjoau'"
-console.log(xo.a.b.c.d.e.f.g.h); // produces message: "Value of attribute 'lskdjoau'"
-
-
 
 
 
@@ -245,12 +245,12 @@ export function sendSocketIOMessage(msg) {
 		<button on:click={() => sendSocketIOMessage(message)}>
 			Send message
 		</button> -->
-		
-	<p>{message}</p>
-	<!-- <p>{JSON.stringify(xo.data.extra._value, null, 3)}</p> -->
-	<p>{xo.data.extra._value}</p>
-	<p>{change_count}</p>
-	<p>{input_count}</p>
+			
+		<p>{message}</p>
+		<p>{xo.data.extra._value}</p>
+		<p>{change_count}</p>
+		<p>{input_count}</p>
+		<!-- <p>{JSON.stringify(xo.data.extra._value, null, 3)}</p> -->
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
