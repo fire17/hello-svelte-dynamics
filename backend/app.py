@@ -63,7 +63,9 @@ def manual(*v,**kw):
             
             if True:
                 # socketio.emit('server_update', {"data":v[0],"message":str(v[0])+"@@"}, to = room)
-                socketio.emit('server_update', {"data":{"_value":v[0],"extra":{"_value":"inner_data","meta":{}}},"message":str(v[0])+"@@"}, to = room)
+                socketio.emit('server_update', {"data":{"_value":v[0],"extra":{"_value":"inner_data","meta":{}}},"message":str(v[0])}, to = room)
+                # socketio.emit('server_update', {"data":{"_value":message+"@","extra":{"_value":"inner_data","meta":{}}},"message":str(message)+"@@"}, room = request.sid)
+
             else:
                 c = 0
                 while(c<100):
